@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casamento Laís & Vitor - 04/12/2027</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+    <!-- QR Code Generator JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                        cursive: ['"Pinyon Script"', 'cursive']
+                    },
+                    colors: {
+                        theme: {
+                            50: 'var(--color-50)',
+                            100: 'var(--color-100)',
+                            200: 'var(--color-200)',
+                            500: 'var(--color-500)',
+                            600: 'var(--color-600)',
+                            700: 'var(--color-700)',
+                            800: 'var(--color-800)',
+                            900: 'var(--color-900)',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            /* Default Theme: Floral Vibrante (Fundo Bege/Creme + Rosa Pink, Laranja, Terracota & Verde Limão) */
+            --color-50: #fdfaf5;   /* Bege / Creme claro */
+            --color-100: #f7eee2;  /* Creme suave */
+            --color-200: #ebdac8;  /* Bege border e cards */
+            --color-500: #e0487c;  /* Rosa Pink */
+            --color-600: #c85038;  /* Terracota */
+            --color-700: #e66a28;  /* Laranja */
+            --color-800: #4a2216;  /* Terracota Escuro */
+            --color-900: #2b110a;  /* Café/Preto suave */
+            --color-lime: #84cc16; /* Verde Limão */
+        }
+
+        body.theme-gold {
+            --color-50: #fdfbf7;
+            --color-100: #f7f2e8;
+            --color-200: #eee3d0;
+            --color-500: #d4af37;
+            --color-600: #b8860b;
+            --color-700: #996515;
+            --color-800: #5c4010;
+            --color-900: #2c1f08;
+        }
+
+        body.theme-sage {
+            --color-50: #f4f7f4;
+            --color-100: #e3ebe3;
+            --color-200: #c6d7c6;
+            --color-500: #5b8266;
+            --color-600: #46664f;
+            --color-700: #354e3c;
+            --color-800: #233428;
+            --color-900: #121c15;
+        }
+
+        body.theme-terracotta {
+            --color-50: #faf5f3;
+            --color-100: #f4e8e3;
+            --color-200: #e4ccbf;
+            --color-500: #c86d51;
+            --color-600: #a85238;
+            --color-700: #863d27;
+            --color-800: #5a2819;
+            --color-900: #31140c;
+        }
+
+        body.theme-serenity {
+            --color-50: #f3f7fa;
+            --color-100: #e2ecf4;
+            --color-200: #c2d7e8;
+            --color-500: #5b8fb9;
+            --color-600: #41729f;
+            --color-700: #2e5478;
+            --color-800: #1d3750;
+            --color-900: #0f1d2b;
+        }
+
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.7) 100%);
+        }
+
+        .glass-card {
+            background: rgba(253, 250, 245, 0.92);
+            backdrop-filter: blur(12px);
+        }
+
+        .btn-floral-gradient {
+            background: linear-gradient(135deg, #e0487c 0%, #c85038 50%, #e66a28 100%);
+        }
+        .btn-floral-gradient:hover {
+            opacity: 0.93;
+        }
+    </style>
+</head>
+<body class="font-sans bg-theme-50 text-slate-800 antialiased selection:bg-theme-200 selection:text-theme-900 transition-colors duration-500">
+
+    <nav class="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-theme-100 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="font-serif text-2xl font-bold tracking-wide text-theme-800">
+                <span id="navCoupleName">Laís & Vitor</span>
+            </a>
+            
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="#historia" class="hover:text-theme-600 transition">Nossa História</a>
+                <a href="#evento" class="hover:text-theme-600 transition">O Evento</a>
+                <a href="#presentes" class="hover:text-theme-600 transition">Lista de Presentes</a>
+                <a href="#rsvp" class="hover:text-theme-600 transition">RSVP</a>
+                <a href="#recados" class="hover:text-theme-600 transition">Mural</a>
+                <a href="#galeria" class="hover:text-theme-600 transition">Galeria</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button onclick="toggleAdminModal()" class="text-xs bg-theme-100 hover:bg-theme-200 text-theme-800 font-semibold px-3 py-1.5 rounded-full transition flex items-center gap-1.5 shadow-sm">
+                    <i class="fa-solid fa-palette"></i>
+                    <span class="hidden sm:inline">Personalizar</span>
+                </button>
+                <a href="#rsvp" class="bg-theme-600 hover:bg-theme-700 text-white text-xs md:text-sm font-semibold px-4 py-2 rounded-full shadow-sm hover:shadow transition">
+                    Confirmar Presença
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="relative min-h-screen flex items-center justify-center text-center text-white px-4 pt-16">
+        <div class="absolute inset-0 z-0">
+            <img src="pasted_file_2QnQm0_image_16x9.jpg" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000'"
+                 alt="Casamento Laís e Vitor" 
+                 class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-3xl mx-auto space-y-6 animate-fade-in py-12">
+            <p class="font-cursive text-4xl sm:text-5xl md:text-6xl text-theme-200">Nosso Grande Dia</p>
+            <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight uppercase" id="heroCoupleName">
+                Laís & Vitor
+            </h1>
+            <p class="text-lg sm:text-xl font-light tracking-widest text-slate-200 uppercase" id="heroSubtitle">
+                04 DE DEZEMBRO DE 2027 • OSASCO, SP
+            </p>
+
+            <!-- Countdown Timer Card -->
+            <div class="pt-6">
+                <div class="glass-card text-slate-800 p-6 rounded-2xl shadow-2xl max-w-xl mx-auto border border-amber-100">
+                    <div class="flex items-center justify-center gap-2 mb-3">
+                        <i class="fa-solid fa-leaf text-lime-500 text-sm"></i>
+                        <p class="text-xs font-bold uppercase tracking-widest text-theme-700">Contagem Regressiva para o "Sim"</p>
+                        <i class="fa-solid fa-leaf text-lime-500 text-sm transform -scale-x-100"></i>
+                    </div>
+                    <div class="grid grid-cols-4 gap-2 sm:gap-4 font-serif">
+                        <div class="bg-white/90 p-3 rounded-xl border border-theme-100 shadow-sm">
+                            <span id="timerDays" class="block text-2xl sm:text-4xl font-bold text-rose-600">00</span>
+                            <span class="text-[10px] sm:text-xs text-slate-500 font-sans uppercase">Dias</span>
+                        </div>
+                        <div class="bg-white/90 p-3 rounded-xl border border-theme-100 shadow-sm">
+                            <span id="timerHours" class="block text-2xl sm:text-4xl font-bold text-orange-600">00</span>
+                            <span class="text-[10px] sm:text-xs text-slate-500 font-sans uppercase">Horas</span>
+                        </div>
+                        <div class="bg-white/90 p-3 rounded-xl border border-theme-100 shadow-sm">
+                            <span id="timerMinutes" class="block text-2xl sm:text-4xl font-bold text-amber-700">00</span>
+                            <span class="text-[10px] sm:text-xs text-slate-500 font-sans uppercase">Minutos</span>
+                        </div>
+                        <div class="bg-white/90 p-3 rounded-xl border border-theme-100 shadow-sm">
+                            <span id="timerSeconds" class="block text-2xl sm:text-4xl font-bold font-mono text-lime-600">00</span>
+                            <span class="text-[10px] sm:text-xs text-slate-500 font-sans uppercase">Segundos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pt-4 flex justify-center gap-4 flex-wrap">
+                <a href="#rsvp" class="btn-floral-gradient text-white font-semibold px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-solid fa-envelope-open-text text-sm"></i> Confirmar Presença
+                </a>
+                <a href="#presentes" class="bg-white/20 hover:bg-white/30 text-white font-semibold px-8 py-3.5 rounded-full backdrop-blur-md border border-white/40 transition flex items-center gap-2">
+                    <i class="fa-solid fa-gift text-lime-400 text-sm"></i> Ver Lista de Presentes
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="historia" class="py-20 px-4 bg-theme-50">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <div class="flex items-center justify-center gap-2">
+                    <span class="w-8 h-0.5 bg-lime-500 rounded"></span>
+                    <span class="font-cursive text-3xl text-rose-600">Amor e Cúmplices</span>
+                    <span class="w-8 h-0.5 bg-lime-500 rounded"></span>
+                </div>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-slate-800">Nossa História</h2>
+                <div class="w-16 h-0.5 bg-gradient-to-r from-rose-500 via-orange-500 to-lime-500 mx-auto"></div>
+            </div>
+
+            <div id="historyTimelineContainer">
+                <!-- Dynamic timeline content -->
+            </div>
+        </div>
+    </section>
+
+    <section id="evento" class="py-20 px-4 bg-theme-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center space-y-3 mb-16">
+                <span class="font-cursive text-3xl text-theme-600">Onde & Quando</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-slate-800">Cerimônia & Festa</h2>
+                <div class="w-16 h-0.5 bg-theme-500 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <!-- Location Info -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-theme-100 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 bg-theme-100 text-theme-700 rounded-2xl flex items-center justify-center mb-6 text-xl">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold text-slate-800 mb-2" id="venueNameDisplay">Estação 840</h3>
+                        <p class="text-slate-600 text-sm mb-4" id="venueAddressDisplay">Av. Mal. Rondon, 840 - Centro, Osasco - SP</p>
+                        
+                        <div class="space-y-3 pt-4 border-t border-slate-100">
+                            <div class="flex items-center gap-3 text-sm text-slate-700">
+                                <i class="fa-regular fa-calendar text-theme-600 w-5"></i>
+                                <span>Sábado, 04 de Dezembro de 2027</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-700">
+                                <i class="fa-regular fa-clock text-theme-600 w-5"></i>
+                                <span>Recepção dos convidados às <strong>15:30</strong></span>
+                            </div>
+                            <div class="flex items-center gap-3 text-sm text-slate-700">
+                                <i class="fa-solid fa-shirt text-theme-600 w-5"></i>
+                                <span>Traje: <strong>Passeio Completo / Esporte Fino</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 flex flex-wrap gap-3">
+                        <a href="https://maps.google.com/?q=Estacao+840+Osasco" target="_blank" rel="noopener" 
+                           class="flex-1 bg-theme-600 hover:bg-theme-700 text-white font-semibold text-center py-3 px-4 rounded-xl text-sm transition shadow-sm">
+                            <i class="fa-solid fa-map-location-dot mr-2"></i> Google Maps
+                        </a>
+                        <a href="https://waze.com/ul?q=Estacao+840+Osasco" target="_blank" rel="noopener" 
+                           class="flex-1 bg-sky-500 hover:bg-sky-600 text-white font-semibold text-center py-3 px-4 rounded-xl text-sm transition shadow-sm">
+                            <i class="fa-brands fa-waze mr-2"></i> Abrir no Waze
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Timeline Schedule -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-theme-100">
+                    <h3 class="font-serif text-2xl font-bold text-slate-800 mb-6 flex items-center gap-3">
+                        <i class="fa-solid fa-clock-rotate-left text-theme-600 text-xl"></i> Cronograma do Dia
+                    </h3>
+
+                    <div class="space-y-6 relative before:absolute before:inset-0 before:left-3.5 before:w-0.5 before:bg-theme-100 pl-8">
+                        <div class="relative">
+                            <div class="absolute -left-8 top-1 w-3 h-3 rounded-full bg-theme-500 ring-4 ring-white"></div>
+                            <span class="text-xs font-bold text-theme-600">15:30</span>
+                            <h4 class="font-semibold text-slate-800 text-base">Chegada dos Convidados</h4>
+                            <p class="text-xs text-slate-500">Boas-vindas e acomodação dos amigos e familiares.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-8 top-1 w-3 h-3 rounded-full bg-theme-500 ring-4 ring-white"></div>
+                            <span class="text-xs font-bold text-theme-600">16:00</span>
+                            <h4 class="font-semibold text-slate-800 text-base">Início da Cerimônia</h4>
+                            <p class="text-xs text-slate-500">O momento mais esperado! Troca de votos e alianças.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-8 top-1 w-3 h-3 rounded-full bg-theme-500 ring-4 ring-white"></div>
+                            <span class="text-xs font-bold text-theme-600">17:15</span>
+                            <h4 class="font-semibold text-slate-800 text-base">Cocktail & Fotos</h4>
+                            <p class="text-xs text-slate-500">Brindes, petiscos e registro de memórias especiais.</p>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-8 top-1 w-3 h-3 rounded-full bg-theme-500 ring-4 ring-white"></div>
+                            <span class="text-xs font-bold text-theme-600">18:30</span>
+                            <h4 class="font-semibold text-slate-800 text-base">Jantar & Pista de Dança</h4>
+                            <p class="text-xs text-slate-500">Gastronomia incrível e muita comemoração até a noite!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="presentes" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center space-y-3 mb-12">
+                <span class="font-cursive text-3xl text-theme-600">Carinho em Mimos</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-bold text-slate-800">Lista de Presentes</h2>
+                <p class="text-slate-600 max-w-xl mx-auto text-sm">Sua presença é nosso maior presente! Se desejar nos abençoar com um carinho extra para o nosso novo lar e lua de mel, escolha um dos mimos abaixo:</p>
+                <div class="w-16 h-0.5 bg-theme-500 mx-auto"></div>
+            </div>
+
+            <!-- Gift Category Filters -->
+            <div class="flex justify-center gap-2 mb-8 flex-wrap">
+                <button onclick="filterGifts('all')" class="gift-filter-btn active bg-theme-600 text-white text-xs font-semibold px-4 py-2 rounded-full transition">Todos</button>
+                <button onclick="filterGifts('luademel')" class="gift-filter-btn bg-slate-100 hover:bg-theme-100 text-slate-700 text-xs font-semibold px-4 py-2 rounded-full transition">Lua de Mel</button>
+                <button onclick="filterGifts('casa')" class="gift-filter-btn bg-slate-100 hover:bg-theme-100 text-slate-700 text-xs font-semibold px-4 py-2 rounded-full transition">Nosso Lar</button>
+                <button onclick="filterGifts('divertido')" class="gift-filter-btn bg-slate-100 hover:bg-theme-100 text-slate-700 text-xs font-semibold px-4 py-2 rounded-full transition">Brincadeiras</button>
+            </div>
+
+            <!-- Gift Grid Container -->
+            <div id="giftGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Gifts injected dynamically -->
+            </div>
+        </div>
+    </section>
+
+    <section id="rsvp" class="py-20 px-4 bg-theme-100/50 relative">
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white p-8 sm:p-12 rounded-3xl shadow-xl border border-theme-200">
+                <div class="text-center space-y-3 mb-8">
+                    <span class="font-cursive text-3xl text-theme-600">Lista Restrita</span>
+                    <h2 class="font-serif text-4xl font-bold text-slate-800">Confirmação de Presença</h2>
+                    <p class="text-slate-600 text-sm">Digite seu nome abaixo para localizar seu convite individual ou familiar e confirmar sua presença até <strong>01/10/2027</strong>.</p>
+                </div>
+
+                <!-- Step 1: Search Guest Name -->
+                <div id="rsvpStepSearch" class="space-y-4">
+                    <div class="relative">
+                        <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">Procurar Nome no Convite *</label>
+                        <div class="flex gap-2">
+                            <div class="relative flex-1">
+                                <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"></i>
+                                <input type="text" id="rsvpSearchInput" oninput="handleGuestSearch()" placeholder="Digite seu primeiro nome ou sobrenome..." class="w-full pl-11 pr-4 py-3.5 rounded-xl border border-slate-200 focus:ring-2 focus:ring-theme-500 focus:border-transparent outline-none transition text-sm">
+                            </div>
+                            <button type="button" onclick="handleGuestSearch()" class="bg-theme-600 hover:bg-theme-700 text-white font-bold px-6 py-3.5 rounded-xl transition text-sm">
+                                Buscar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Search Results Box -->
+                    <div id="rsvpSearchResults" class="space-y-3 pt-2">
+                        <div class="p-6 text-center bg-slate-50 rounded-2xl border border-dashed border-slate-200 text-slate-500 text-sm">
+                            <i class="fa-solid fa-address-card text-2xl text-slate-400 mb-2 block"></i>
+                            Digite seu nome acima para encontrar seu convite na lista dos noivos.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Confirm RSVP Form (Initially Hidden) -->
+                <div id="rsvpStepConfirm" class="hidden space-y-6 animate-fade-in">
+                    <div class="bg-theme-50 p-4 rounded-2xl border border-theme-200 flex items-center justify-between">
+                        <div>
+                            <span class="text-xs text-theme-700 font-bold uppercase tracking-wider block">Convite Localizado:</span>
+                            <h4 id="selectedGuestName" class="font-serif text-2xl font-bold text-slate-800">Nome do Convidado</h4>
+                            <p id="selectedGuestMaxCount" class="text-xs text-slate-600">Direito a até 1 acompanhante</p>
+                        </div>
+                        <button onclick="resetRsvpSearch()" class="text-xs bg-white border border-slate-200 hover:bg-slate-100 text-slate-600 font-semibold px-3 py-1.5 rounded-lg transition">
+                            <i class="fa-solid fa-rotate-left mr-1"></i> Trocar Nome
+                        </button>
+                    </div>
+
+                    <form id="rsvpForm" onsubmit="handleRsvpSubmit(event)" class="space-y-5">
+                        <input type="hidden" id="selectedGuestId">
+
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">WhatsApp / Celular *</label>
+                                <input type="tel" required id="rsvpPhone" placeholder="(11) 99999-9999" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-theme-500 focus:border-transparent outline-none transition text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Você irá ao evento? *</label>
+                                <select id="rsvpAttending" required onchange="toggleCompanionsField()" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-theme-500 focus:border-transparent outline-none transition bg-white text-sm">
+                                    <option value="sim">Sim, estarei presente com certeza!</option>
+                                    <option value="nao">Infelizmente não poderei ir</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="companionsContainer">
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Quantos Acompanhantes Irão Com Você?</label>
+                            <select id="rsvpGuests" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-theme-500 focus:border-transparent outline-none transition bg-white text-sm">
+                                <!-- Dynamic companion options -->
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">Nome(s) do(s) Acompanhante(s) ou Restrições Alimentares</label>
+                            <textarea id="rsvpNotes" rows="2" placeholder="Ex: Acompanhante: João Silva. Alergia a frutos do mar." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-theme-500 focus:border-transparent outline-none transition text-sm"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-theme-600 hover:bg-theme-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-xl transition text-base flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-check-circle"></i> Confirmar Minha Presença
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="recados" class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center space-y-3 mb-12">
+                <span class="font-cursive text-3xl text-theme-600">Mural de Carinho</span>
+                <h2 class="font-serif text-4xl font-bold text-slate-800">Deixe um Recado para os Noivos</h2>
+                <div class="w-16 h-0.5 bg-theme-500 mx-auto"></div>
+            </div>
+
+            <!-- Add Message Form -->
+            <div class="bg-theme-50 p-6 sm:p-8 rounded-3xl border border-theme-100 mb-12">
+                <form id="messageForm" onsubmit="handleMessageSubmit(event)" class="space-y-4">
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <input type="text" id="msgAuthor" required placeholder="Seu Nome" class="px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-theme-500 outline-none text-sm">
+                        <input type="text" id="msgRelation" placeholder="Ex: Prima da Noiva / Amigo do Noivo" class="px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-theme-500 outline-none text-sm">
+                    </div>
+                    <textarea id="msgText" required rows="3" placeholder="Escreva uma mensagem cheia de amor para o casal..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-theme-500 outline-none text-sm"></textarea>
+                    <button type="submit" class="bg-theme-600 hover:bg-theme-700 text-white font-semibold px-6 py-2.5 rounded-xl text-sm transition">
+                        <i class="fa-regular fa-paper-plane mr-2"></i> Enviar Mensagem
+                    </button>
+                </form>
+            </div>
+
+            <!-- Messages List -->
+            <div id="messagesContainer" class="grid sm:grid-cols-2 gap-6">
+                <!-- Dynamic messages -->
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-20 px-4 bg-theme-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center space-y-3 mb-12">
+                <span class="font-cursive text-3xl text-theme-600">Momentos</span>
+                <h2 class="font-serif text-4xl font-bold text-slate-800">Nossa Galeria</h2>
+                <div class="w-16 h-0.5 bg-theme-500 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="relative overflow-hidden rounded-2xl group cursor-pointer shadow-sm" onclick="openLightbox('pasted_file_2QnQm0_image_site.jpg')">
+                    <img src="pasted_file_2QnQm0_image_site.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600'" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" alt="Laís e Vitor Destaque">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl group cursor-pointer shadow-sm" onclick="openLightbox('WhatsApp Image 2026-08-14 at 22.11.22.jpeg')">
+                    <img src="WhatsApp Image 2026-08-14 at 22.11.22.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600'" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" alt="Laís e Vitor 1">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl group cursor-pointer shadow-sm" onclick="openLightbox('WhatsApp Image 2026-08-14 at 22.11.22 (1).jpeg')">
+                    <img src="WhatsApp Image 2026-08-14 at 22.11.22 (1).jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=600'" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" alt="Laís e Vitor 2">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+                <div class="relative overflow-hidden rounded-2xl group cursor-pointer shadow-sm" onclick="openLightbox('WhatsApp Image 2026-08-14 at 22.11.23.jpeg')">
+                    <img src="WhatsApp Image 2026-08-14 at 22.11.23.jpeg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=600'" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500" alt="Laís e Vitor 3">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white"><i class="fa-solid fa-magnifying-glass-plus text-2xl"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-white py-12 px-4 text-center">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <h3 class="font-serif text-3xl font-bold tracking-wide" id="footerCoupleName">Laís & Vitor</h3>
+            <p class="text-xs text-slate-400 uppercase tracking-widest">04.12.2027 • Osasco - SP</p>
+            <p class="text-xs text-slate-500 pt-4 border-t border-slate-800">Feito com carinho para celebrar nosso amor.</p>
+        </div>
+    </footer>
+
+    <div id="pixModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white max-w-md w-full rounded-3xl p-6 sm:p-8 space-y-6 relative animate-scale-up">
+            <button onclick="closePixModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl w-8 h-8 rounded-full flex items-center justify-center">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center space-y-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-theme-600">Presentear Noivos</span>
+                <h3 id="modalGiftTitle" class="font-serif text-2xl font-bold text-slate-800">Nome do Presente</h3>
+                <p id="modalGiftPrice" class="text-theme-700 font-bold text-xl">R$ 0,00</p>
+            </div>
+
+            <!-- QR Code display -->
+            <div class="bg-slate-50 p-4 rounded-2xl flex flex-col items-center justify-center border border-slate-100">
+                <div id="qrcode" class="p-2 bg-white rounded-xl shadow-sm mb-3"></div>
+                <p class="text-xs text-slate-500 text-center">Escaneie o QR Code com o aplicativo do seu banco</p>
+            </div>
+
+            <!-- Pix Key Copy Box -->
+            <div class="space-y-3">
+                <div class="bg-slate-100 p-3 rounded-xl flex items-center justify-between text-xs">
+                    <div class="truncate mr-2">
+                        <span class="block text-[10px] text-slate-400 font-bold uppercase">Chave Pix:</span>
+                        <span id="pixKeyDisplay" class="font-mono font-semibold text-slate-700 truncate">11990152706</span>
+                    </div>
+                    <button onclick="copyPixKey()" class="bg-theme-600 hover:bg-theme-700 text-white font-bold px-3 py-1.5 rounded-lg shrink-0 flex items-center gap-1">
+                        <i class="fa-regular fa-copy"></i> Copiar
+                    </button>
+                </div>
+
+                <div class="text-center">
+                    <span class="text-xs text-slate-500">Favorecido: <strong class="text-slate-700" id="pixNameDisplay">Laís e Vitor</strong></span>
+                </div>
+            </div>
+
+            <button onclick="confirmGiftSent()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl text-sm transition">
+                <i class="fa-solid fa-check mr-2"></i> Já fiz o PIX!
+            </button>
+        </div>
+    </div>
+
+    <div id="adminModal" class="fixed inset-0 bg-black/60 z-50 hidden flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white max-w-2xl w-full rounded-3xl p-6 sm:p-8 space-y-6 relative max-h-[90vh] overflow-y-auto">
+            <button onclick="toggleAdminModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="border-b pb-4">
+                <h3 class="font-serif text-2xl font-bold text-slate-800">Painel do Casal & Configurações</h3>
+                <p class="text-xs text-slate-500">Gerencie textos da história, convidados, cores e PIX em tempo real.</p>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="flex gap-2 border-b text-xs font-bold uppercase tracking-wider overflow-x-auto pb-1">
+                <button id="tabBtnTheme" onclick="switchAdminTab('theme')" class="pb-2 border-b-2 border-theme-600 text-theme-700 px-2 shrink-0">Aparência & Pix</button>
+                <button id="tabBtnHistory" onclick="switchAdminTab('history')" class="pb-2 border-b-2 border-transparent text-slate-400 hover:text-slate-600 px-2 shrink-0 flex items-center gap-1.5">
+                    <i class="fa-solid fa-book-open"></i> Editar História
+                </button>
+                <button id="tabBtnGuests" onclick="switchAdminTab('guests')" class="pb-2 border-b-2 border-transparent text-slate-400 hover:text-slate-600 px-2 shrink-0 flex items-center gap-1.5">
+                    <i class="fa-solid fa-users"></i> Lista Restrita (<span id="adminGuestCountBadge">0</span>)
+                </button>
+            </div>
+
+            <!-- Tab Content 1: Theme & Colors -->
+            <div id="adminTabTheme" class="space-y-6">
+                <div class="space-y-2">
+                    <label class="block font-bold text-xs uppercase tracking-wider text-slate-800">Paleta de Cores</label>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button onclick="setTheme('floral')" class="p-3 border-2 rounded-xl flex items-center gap-2 text-left hover:border-rose-500 border-rose-500 bg-rose-50/50">
+                            <div class="flex gap-1 shrink-0">
+                                <span class="w-3 h-6 rounded-l bg-rose-500"></span>
+                                <span class="w-3 h-6 bg-orange-500"></span>
+                                <span class="w-3 h-6 bg-amber-700"></span>
+                                <span class="w-3 h-6 rounded-r bg-lime-500"></span>
+                            </div>
+                            <span class="text-xs font-semibold text-slate-800">Floral Vibrante (Bege, Pink, Laranja & Limão)</span>
+                        </button>
+                        <button onclick="setTheme('gold')" class="p-3 border-2 rounded-xl flex items-center gap-3 text-left hover:border-amber-500 border-slate-200">
+                            <span class="w-6 h-6 rounded-full bg-amber-500 border"></span>
+                            <span class="text-xs font-semibold text-slate-700">Ouro & Creme</span>
+                        </button>
+                        <button onclick="setTheme('sage')" class="p-3 border-2 rounded-xl flex items-center gap-3 text-left hover:border-emerald-600 border-slate-200">
+                            <span class="w-6 h-6 rounded-full bg-emerald-600 border"></span>
+                            <span class="text-xs font-semibold text-slate-700">Eucalipto & Sálvia</span>
+                        </button>
+                        <button onclick="setTheme('terracotta')" class="p-3 border-2 rounded-xl flex items-center gap-3 text-left hover:border-rose-700 border-slate-200">
+                            <span class="w-6 h-6 rounded-full bg-rose-700 border"></span>
+                            <span class="text-xs font-semibold text-slate-700">Terracota Boho</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Content 2: History Editor -->
+            <div id="adminTabHistory" class="hidden space-y-6">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm">Momentos da Nossa História</h4>
+                        <p class="text-xs text-slate-500">Edite as datas, títulos e textos que aparecem no site.</p>
+                    </div>
+                    <button onclick="addHistoryItem()" class="bg-theme-600 hover:bg-theme-700 text-white text-xs font-bold px-3 py-1.5 rounded-lg transition">
+                        <i class="fa-solid fa-plus mr-1"></i> + Novo Momento
+                    </button>
+                </div>
+
+                <div id="adminHistoryItemsContainer" class="space-y-4">
+                    <!-- History edit cards injected dynamically -->
+                </div>
+            </div>
+
+            <!-- Tab Content 3: Restricted Guest List Manager -->
+            <div id="adminTabGuests" class="hidden space-y-6">
+                <div class="grid grid-cols-3 gap-2 text-center">
+                    <div class="bg-slate-100 p-3 rounded-xl">
+                        <span class="block text-xs text-slate-500 uppercase font-bold">Total Lista</span>
+                        <span id="statTotalGuests" class="text-xl font-bold text-slate-800">0</span>
+                    </div>
+                    <div class="bg-emerald-50 p-3 rounded-xl border border-emerald-200">
+                        <span class="block text-xs text-emerald-700 uppercase font-bold">Confirmados</span>
+                        <span id="statConfirmedGuests" class="text-xl font-bold text-emerald-700">0</span>
+                    </div>
+                    <div class="bg-rose-50 p-3 rounded-xl border border-rose-200">
+                        <span class="block text-xs text-rose-700 uppercase font-bold">Recusados</span>
+                        <span id="statDeclinedGuests" class="text-xl font-bold text-rose-700">0</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-3">
+                    <label class="block text-xs font-bold uppercase tracking-wider text-slate-700">Adicionar Convidado Permitido</label>
+                    <div class="grid sm:grid-cols-3 gap-2">
+                        <input type="text" id="newGuestName" placeholder="Nome Completo do Convidado" class="sm:col-span-2 px-3 py-2 border rounded-lg text-sm">
+                        <select id="newGuestMaxCompanions" class="px-3 py-2 border rounded-lg text-sm bg-white">
+                            <option value="0">Individual (Sem Acompanhante)</option>
+                            <option value="1">+1 Acompanhante</option>
+                            <option value="2">+2 Acompanhantes</option>
+                            <option value="3">+3 Acompanhantes</option>
+                            <option value="4">+4 Acompanhantes</option>
+                        </select>
+                    </div>
+                    <button onclick="addGuestToAdminList()" class="w-full bg-theme-600 hover:bg-theme-700 text-white font-bold py-2 rounded-lg text-xs transition">
+                        <i class="fa-solid fa-plus mr-1"></i> Incluir Convidado na Lista Restrita
+                    </button>
+                </div>
+
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between text-xs font-bold text-slate-500 uppercase px-1">
+                        <span>Convidado & Acompanhantes Permissíveis</span>
+                        <span>Status RSVP</span>
+                    </div>
+                    <div id="adminGuestListContainer" class="max-h-60 overflow-y-auto space-y-2 pr-1">
+                        <!-- Guest rows injected dynamically -->
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="toggleAdminModal()" class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl text-sm">Concluído</button>
+        </div>
+    </div>
+
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4 cursor-pointer" onclick="closeLightbox()">
+        <img id="lightboxImg" src="" class="max-w-full max-h-[90vh] rounded-xl object-contain shadow-2xl">
+    </div>
+
+    <script>
+        const appState = {
+            coupleNames: "Laís & Vitor",
+            weddingDate: "2027-12-04T15:30:00",
+            venueName: "Estação 840",
+            venueAddress: "Av. Mal. Rondon, 840 - Centro, Osasco - SP",
+            pixKey: "11990152706",
+            pixName: "Laís e Vitor",
+            theme: "floral",
+            history: [
+                {
+                    id: 1,
+                    date: "12 de Outubro de 2021",
+                    title: "O Primeiro Olhar",
+                    description: "Nosso caminho se cruzou por acaso em um café aconchegante. Um sorriso bobo, uma conversa sem fim e a certeza de que ali começava algo mágico.",
+                    image: "WhatsApp Image 2026-08-14 at 22.11.22 (1).jpeg"
+                },
+                {
+                    id: 2,
+                    date: "24 de Julho de 2025",
+                    title: "O Pedido de Casamento",
+                    description: "Com o pôr do sol como testemunha e o coração batendo forte, veio a pergunta que mudou nossas vidas: 'Quer caminhar pra sempre comigo?' E o SIM mais lindo e emocionado veio!",
+                    image: "WhatsApp Image 2026-08-14 at 22.11.23.jpeg"
+                }
+            ],
+            guestList: [
+                { id: 1, name: "Ana Clara Silva", maxCompanions: 1, attending: null, phone: "", notes: "", companionsCount: 0 },
+                { id: 2, name: "Lucas Santos", maxCompanions: 0, attending: null, phone: "", notes: "", companionsCount: 0 },
+                { id: 3, name: "Mariana Souza e Família", maxCompanions: 3, attending: null, phone: "", notes: "", companionsCount: 0 },
+                { id: 4, name: "Carlos Eduardo", maxCompanions: 1, attending: null, phone: "", notes: "", companionsCount: 0 },
+                { id: 5, name: "Fernanda Lima", maxCompanions: 0, attending: null, phone: "", notes: "", companionsCount: 0 },
+                { id: 6, name: "Roberto Oliveira", maxCompanions: 2, attending: null, phone: "", notes: "", companionsCount: 0 }
+            ],
+            selectedGuest: null,
+            gifts: [
+                { id: 1, title: "Jantar Romântico na Lua de Mel", price: 150, category: "luademel", icon: "fa-utensils" },
+                { id: 2, title: "Passeio de Barco ao Pôr do Sol", price: 250, category: "luademel", icon: "fa-ship" },
+                { id: 3, title: "Cafeteira de Espressos Elegante", price: 300, category: "casa", icon: "fa-mug-hot" },
+                { id: 4, title: "Jogo de Cama 600 Fios", price: 200, category: "casa", icon: "fa-bed" },
+                { id: 5, title: "Ajuda para pagar a Bateria da Festa", price: 100, category: "divertido", icon: "fa-drum" },
+                { id: 6, title: "Engov para a Ressaca dos Noivos", price: 50, category: "divertido", icon: "fa-pills" }
+            ],
+            messages: [
+                { author: "Ana Clara", relation: "Madrinha", text: "Que a felicidade de vocês seja constante! Estamos contando os dias para celebrar!" },
+                { author: "Lucas Santos", relation: "Amigo dos Noivos", text: "Parabéns Laís e Vitor! Vocês são um casal incrível. Toda a felicidade do mundo!" }
+            ]
+        };
+
+        window.onload = function() {
+            startCountdown();
+            renderHistory();
+            renderAdminHistory();
+            renderGifts(appState.gifts);
+            renderMessages();
+            updateSiteDetails();
+            renderAdminGuestList();
+        };
+
+        function renderHistory() {
+            const container = document.getElementById('historyTimelineContainer');
+            if (!container) return;
+
+            let html = `
+                <div class="space-y-12 relative before:absolute before:inset-0 before:left-1/2 before:-translate-x-1/2 before:w-0.5 before:bg-theme-200 hidden sm:block">`;
+
+            appState.history.forEach((item, index) => {
+                const isEven = index % 2 === 0;
+                html += `
+                    <div class="relative flex items-center justify-between group ${isEven ? '' : 'flex-row-reverse'}">
+                        <div class="w-1/2 ${isEven ? 'pr-8 text-right' : 'pl-8 text-left'}">
+                            <span class="text-xs font-bold text-theme-600 uppercase tracking-widest">${item.date}</span>
+                            <h3 class="font-serif text-2xl font-bold text-slate-800 mt-1">${item.title}</h3>
+                            <p class="text-slate-600 text-sm mt-2 leading-relaxed">${item.description}</p>
+                        </div>
+                        <div class="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-theme-600 border-4 border-white shadow text-white flex items-center justify-center text-xs z-10">
+                            <i class="fa-solid ${isEven ? 'fa-heart' : 'fa-ring'}"></i>
+                        </div>
+                        <div class="w-1/2 ${isEven ? 'pl-8' : 'pr-8'}">
+                            <img src="${item.image}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=600'" alt="${item.title}" class="rounded-xl shadow-md w-full h-48 object-cover">
+                        </div>
+                    </div>`;
+            });
+
+            html += `</div>
+                <div class="sm:hidden space-y-6">`;
+
+            appState.history.forEach(item => {
+                html += `
+                    <div class="bg-white p-6 rounded-2xl border border-theme-100 shadow-sm space-y-3">
+                        <img src="${item.image}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=600'" alt="${item.title}" class="rounded-xl w-full h-40 object-cover">
+                        <div>
+                            <span class="text-xs font-bold text-theme-600 uppercase">${item.date}</span>
+                            <h3 class="font-serif text-xl font-bold text-slate-800 mt-1">${item.title}</h3>
+                            <p class="text-slate-600 text-sm mt-2">${item.description}</p>
+                        </div>
+                    </div>`;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+        }
+
+        function renderAdminHistory() {
+            const container = document.getElementById('adminHistoryItemsContainer');
+            if (!container) return;
+
+            container.innerHTML = '';
+            appState.history.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-50 p-4 rounded-2xl border border-slate-200 space-y-3 relative";
+                card.innerHTML = `
+                    <div class="flex justify-between items-center border-b border-slate-200 pb-2">
+                        <span class="text-xs font-bold uppercase text-slate-500">Momento ${index + 1}</span>
+                        <button onclick="removeHistoryItem(${item.id})" class="text-rose-500 hover:text-rose-700 text-xs font-bold flex items-center gap-1">
+                            <i class="fa-solid fa-trash-can"></i> Excluir
+                        </button>
+                    </div>
+                    <div class="grid sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[10px] uppercase font-bold text-slate-500 mb-1">Data</label>
+                            <input type="text" value="${item.date}" oninput="updateHistoryField(${item.id}, 'date', this.value)" class="w-full px-3 py-1.5 border rounded-lg text-xs">
+                        </div>
+                        <div>
+                            <label class="block text-[10px] uppercase font-bold text-slate-500 mb-1">Título</label>
+                            <input type="text" value="${item.title}" oninput="updateHistoryField(${item.id}, 'title', this.value)" class="w-full px-3 py-1.5 border rounded-lg text-xs font-bold">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] uppercase font-bold text-slate-500 mb-1">Texto do Momento</label>
+                        <textarea oninput="updateHistoryField(${item.id}, 'description', this.value)" rows="2" class="w-full px-3 py-1.5 border rounded-lg text-xs">${item.description}</textarea>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function updateHistoryField(id, field, value) {
+            const item = appState.history.find(h => h.id === id);
+            if (item) {
+                item[field] = value;
+                renderHistory();
+            }
+        }
+
+        function addHistoryItem() {
+            const newId = appState.history.length ? Math.max(...appState.history.map(h => h.id)) + 1 : 1;
+            appState.history.push({
+                id: newId,
+                date: "Nova Data",
+                title: "Novo Capítulo",
+                description: "Escreva aqui os detalhes deste momento especial...",
+                image: "WhatsApp Image 2026-08-14 at 22.11.22.jpeg"
+            });
+            renderHistory();
+            renderAdminHistory();
+        }
+
+        function removeHistoryItem(id) {
+            if (appState.history.length <= 1) {
+                return;
+            }
+            appState.history = appState.history.filter(h => h.id !== id);
+            renderHistory();
+            renderAdminHistory();
+        }
+
+        function handleGuestSearch() {
+            const query = document.getElementById('rsvpSearchInput').value.trim().toLowerCase();
+            const resultsBox = document.getElementById('rsvpSearchResults');
+
+            if (!query) {
+                resultsBox.innerHTML = `
+                    <div class="p-6 text-center bg-slate-50 rounded-2xl border border-dashed border-slate-200 text-slate-500 text-sm">
+                        <i class="fa-solid fa-address-card text-2xl text-slate-400 mb-2 block"></i>
+                        Digite seu nome acima para encontrar seu convite na lista dos noivos.
+                    </div>`;
+                return;
+            }
+
+            const matches = appState.guestList.filter(g => g.name.toLowerCase().includes(query));
+
+            if (matches.length === 0) {
+                resultsBox.innerHTML = `
+                    <div class="p-6 text-center bg-amber-50 rounded-2xl border border-amber-200 text-amber-900 text-sm space-y-2">
+                        <i class="fa-solid fa-triangle-exclamation text-2xl text-amber-600 block"></i>
+                        <p class="font-bold">Nome não localizado na lista restrita.</p>
+                        <p class="text-xs text-amber-700">Certifique-se de digitar seu nome ou sobrenome corretamente. Se preferir, fale diretamente com os noivos:</p>
+                        <a href="https://wa.me/5511990152706?text=Olá!%20Procurei%20meu%20nome%20no%20site%20de%20casamento%20e%20gostaria%20de%20confirmar%20minha%20presença!" target="_blank" class="inline-flex items-center gap-2 bg-emerald-600 text-white font-bold px-4 py-2 rounded-xl text-xs mt-2 hover:bg-emerald-700 transition">
+                            <i class="fa-brands fa-whatsapp"></i> Falar com os Noivos no WhatsApp
+                        </a>
+                    </div>`;
+                return;
+            }
+
+            let html = `<div class="space-y-2">`;
+            matches.forEach(guest => {
+                html += `
+                    <div onclick="selectGuestForRsvp(${guest.id})" class="p-4 bg-white hover:bg-theme-50 rounded-2xl border border-slate-200 hover:border-theme-500 cursor-pointer transition flex items-center justify-between group">
+                        <div>
+                            <strong class="text-slate-800 text-base block font-serif font-bold group-hover:text-theme-700">${guest.name}</strong>
+                            <span class="text-xs text-slate-500">Convite válido para +${guest.maxCompanions} acompanhante(s)</span>
+                        </div>
+                        <span class="text-xs font-bold text-theme-600 bg-theme-100 group-hover:bg-theme-600 group-hover:text-white px-3 py-1.5 rounded-lg transition">
+                            Selecionar <i class="fa-solid fa-chevron-right ml-1"></i>
+                        </span>
+                    </div>`;
+            });
+            html += `</div>`;
+            resultsBox.innerHTML = html;
+        }
+
+        function selectGuestForRsvp(guestId) {
+            const guest = appState.guestList.find(g => g.id === guestId);
+            if (!guest) return;
+
+            appState.selectedGuest = guest;
+            document.getElementById('selectedGuestId').value = guest.id;
+            document.getElementById('selectedGuestName').innerText = guest.name;
+            document.getElementById('selectedGuestMaxCount').innerText = `Direito a até ${guest.maxCompanions} acompanhante(s)`;
+
+            const companionsSelect = document.getElementById('rsvpGuests');
+            companionsSelect.innerHTML = `<option value="0">Apenas eu (0 acompanhantes)</option>`;
+            for (let i = 1; i <= guest.maxCompanions; i++) {
+                companionsSelect.innerHTML += `<option value="${i}">+${i} Acompanhante(s)</option>`;
+            }
+
+            document.getElementById('rsvpStepSearch').classList.add('hidden');
+            document.getElementById('rsvpStepConfirm').classList.remove('hidden');
+        }
+
+        function resetRsvpSearch() {
+            appState.selectedGuest = null;
+            document.getElementById('rsvpSearchInput').value = '';
+            document.getElementById('rsvpStepSearch').classList.remove('hidden');
+            document.getElementById('rsvpStepConfirm').classList.add('hidden');
+            handleGuestSearch();
+        }
+
+        function toggleCompanionsField() {
+            const attending = document.getElementById('rsvpAttending').value;
+            const companionsBox = document.getElementById('companionsContainer');
+            if (attending === 'sim') {
+                companionsBox.classList.remove('hidden');
+            } else {
+                companionsBox.classList.add('hidden');
+            }
+        }
+
+        function handleRsvpSubmit(e) {
+            e.preventDefault();
+            if (!appState.selectedGuest) return;
+
+            const guestId = parseInt(document.getElementById('selectedGuestId').value);
+            const guest = appState.guestList.find(g => g.id === guestId);
+
+            if (guest) {
+                guest.phone = document.getElementById('rsvpPhone').value;
+                guest.attending = document.getElementById('rsvpAttending').value;
+                guest.companionsCount = guest.attending === 'sim' ? parseInt(document.getElementById('rsvpGuests').value) : 0;
+                guest.notes = document.getElementById('rsvpNotes').value;
+
+                renderAdminGuestList();
+                confetti({ particleCount: 130, spread: 80, origin: { y: 0.5 } });
+                resetRsvpSearch();
+            }
+        }
+
+        function switchAdminTab(tab) {
+            document.getElementById('adminTabTheme').classList.add('hidden');
+            document.getElementById('adminTabHistory').classList.add('hidden');
+            document.getElementById('adminTabGuests').classList.add('hidden');
+
+            document.getElementById('tabBtnTheme').className = "pb-2 border-b-2 border-transparent text-slate-400 hover:text-slate-600 px-2 shrink-0";
+            document.getElementById('tabBtnHistory').className = "pb-2 border-b-2 border-transparent text-slate-400 hover:text-slate-600 px-2 shrink-0 flex items-center gap-1.5";
+            document.getElementById('tabBtnGuests').className = "pb-2 border-b-2 border-transparent text-slate-400 hover:text-slate-600 px-2 shrink-0 flex items-center gap-1.5";
+
+            if (tab === 'theme') {
+                document.getElementById('adminTabTheme').classList.remove('hidden');
+                document.getElementById('tabBtnTheme').className = "pb-2 border-b-2 border-theme-600 text-theme-700 px-2 shrink-0 font-bold";
+            } else if (tab === 'history') {
+                document.getElementById('adminTabHistory').classList.remove('hidden');
+                document.getElementById('tabBtnHistory').className = "pb-2 border-b-2 border-theme-600 text-theme-700 px-2 shrink-0 flex items-center gap-1.5 font-bold";
+            } else if (tab === 'guests') {
+                document.getElementById('adminTabGuests').classList.remove('hidden');
+                document.getElementById('tabBtnGuests').className = "pb-2 border-b-2 border-theme-600 text-theme-700 px-2 shrink-0 flex items-center gap-1.5 font-bold";
+            }
+        }
+
+        function addGuestToAdminList() {
+            const nameInput = document.getElementById('newGuestName');
+            const name = nameInput.value.trim();
+            const maxCompanions = parseInt(document.getElementById('newGuestMaxCompanions').value);
+
+            if (!name) return;
+
+            const newId = appState.guestList.length ? Math.max(...appState.guestList.map(g => g.id)) + 1 : 1;
+            appState.guestList.push({
+                id: newId,
+                name: name,
+                maxCompanions: maxCompanions,
+                attending: null,
+                phone: "",
+                notes: "",
+                companionsCount: 0
+            });
+
+            nameInput.value = '';
+            renderAdminGuestList();
+        }
+
+        function removeGuestFromAdminList(id) {
+            appState.guestList = appState.guestList.filter(g => g.id !== id);
+            renderAdminGuestList();
+        }
+
+        function renderAdminGuestList() {
+            const container = document.getElementById('adminGuestListContainer');
+            if (!container) return;
+
+            container.innerHTML = '';
+            let confirmedCount = 0;
+            let declinedCount = 0;
+
+            appState.guestList.forEach(guest => {
+                if (guest.attending === 'sim') confirmedCount++;
+                if (guest.attending === 'nao') declinedCount++;
+
+                const row = document.createElement('div');
+                row.className = "p-3 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between gap-2 text-xs";
+
+                let statusText = `<span class="text-amber-600 font-bold bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Pendente</span>`;
+                if (guest.attending === 'sim') {
+                    statusText = `<span class="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">Confirmado (+${guest.companionsCount})</span>`;
+                } else if (guest.attending === 'nao') {
+                    statusText = `<span class="text-rose-700 font-bold bg-rose-50 px-2 py-0.5 rounded border border-rose-200">Não irá</span>`;
+                }
+
+                row.innerHTML = `
+                    <div class="truncate flex-1">
+                        <strong class="text-slate-800 font-bold block truncate">${guest.name}</strong>
+                        <span class="text-[10px] text-slate-500">Max Acompanhantes: +${guest.maxCompanions} ${guest.phone ? `• Tel: ${guest.phone}` : ''}</span>
+                    </div>
+                    <div class="flex items-center gap-2 shrink-0">
+                        ${statusText}
+                        <button onclick="removeGuestFromAdminList(${guest.id})" class="text-slate-400 hover:text-rose-600 text-sm p-1">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </div>`;
+                container.appendChild(row);
+            });
+
+            document.getElementById('statTotalGuests').innerText = appState.guestList.length;
+            document.getElementById('statConfirmedGuests').innerText = confirmedCount;
+            document.getElementById('statDeclinedGuests').innerText = declinedCount;
+            document.getElementById('adminGuestCountBadge').innerText = appState.guestList.length;
+        }
+
+        function startCountdown() {
+            const targetDate = new Date(appState.weddingDate).getTime();
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const difference = targetDate - now;
+
+                if (difference <= 0) {
+                    document.getElementById('timerDays').innerText = '00';
+                    document.getElementById('timerHours').innerText = '00';
+                    document.getElementById('timerMinutes').innerText = '00';
+                    document.getElementById('timerSeconds').innerText = '00';
+                    return;
+                }
+
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.getElementById('timerDays').innerText = days.toString().padStart(2, '0');
+                document.getElementById('timerHours').innerText = hours.toString().padStart(2, '0');
+                document.getElementById('timerMinutes').innerText = minutes.toString().padStart(2, '0');
+                document.getElementById('timerSeconds').innerText = seconds.toString().padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        function renderGifts(items) {
+            const container = document.getElementById('giftGrid');
+            if (!container) return;
+            container.innerHTML = '';
+
+            items.forEach(gift => {
+                const card = document.createElement('div');
+                card.className = "bg-theme-50 p-6 rounded-3xl border border-theme-100 flex flex-col justify-between hover:shadow-lg transition group";
+                card.innerHTML = `
+                    <div>
+                        <div class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center text-theme-600 text-xl mb-4 shadow-sm group-hover:scale-110 transition">
+                            <i class="fa-solid ${gift.icon}"></i>
+                        </div>
+                        <h3 class="font-serif font-bold text-slate-800 text-xl mb-1">${gift.title}</h3>
+                        <p class="text-theme-700 font-bold text-lg mb-4">R$ ${gift.price.toFixed(2).replace('.', ',')}</p>
+                    </div>
+                    <button onclick="openPixModal('${gift.title}', ${gift.price})" class="w-full bg-theme-600 hover:bg-theme-700 text-white font-semibold py-2.5 rounded-xl text-sm transition shadow-sm">
+                        Presentear
+                    </button>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        function filterGifts(category) {
+            document.querySelectorAll('.gift-filter-btn').forEach(btn => {
+                btn.classList.remove('bg-theme-600', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+            event.target.classList.remove('bg-slate-100', 'text-slate-700');
+            event.target.classList.add('bg-theme-600', 'text-white');
+
+            if (category === 'all') {
+                renderGifts(appState.gifts);
+            } else {
+                const filtered = appState.gifts.filter(g => g.category === category);
+                renderGifts(filtered);
+            }
+        }
+
+        function openPixModal(title, price) {
+            document.getElementById('modalGiftTitle').innerText = title;
+            document.getElementById('modalGiftPrice').innerText = `R$ ${price.toFixed(2).replace('.', ',')}`;
+            document.getElementById('pixKeyDisplay').innerText = appState.pixKey;
+            document.getElementById('pixNameDisplay').innerText = appState.pixName;
+
+            const qrContainer = document.getElementById('qrcode');
+            qrContainer.innerHTML = '';
+            new QRCode(qrContainer, {
+                text: appState.pixKey,
+                width: 140,
+                height: 140,
+                colorDark : "#1e293b",
+                colorLight : "#ffffff",
+                correctLevel : QRCode.CorrectLevel.H
+            });
+
+            document.getElementById('pixModal').classList.remove('hidden');
+        }
+
+        function closePixModal() {
+            document.getElementById('pixModal').classList.add('hidden');
+        }
+
+        function copyPixKey() {
+            const key = appState.pixKey;
+            const el = document.createElement('textarea');
+            el.value = key;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+        }
+
+        function confirmGiftSent() {
+            confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 } });
+            closePixModal();
+        }
+
+        function handleMessageSubmit(e) {
+            e.preventDefault();
+            const author = document.getElementById('msgAuthor').value;
+            const relation = document.getElementById('msgRelation').value || 'Amigo(a)';
+            const text = document.getElementById('msgText').value;
+
+            appState.messages.unshift({ author, relation, text });
+            renderMessages();
+            document.getElementById('messageForm').reset();
+            confetti({ particleCount: 50, spread: 50, origin: { y: 0.7 } });
+        }
+
+        function renderMessages() {
+            const container = document.getElementById('messagesContainer');
+            if (!container) return;
+            container.innerHTML = '';
+
+            appState.messages.forEach(msg => {
+                const item = document.createElement('div');
+                item.className = "bg-theme-50 p-6 rounded-2xl border border-theme-100 space-y-2";
+                item.innerHTML = `
+                    <p class="text-slate-700 text-sm italic">"${msg.text}"</p>
+                    <div class="pt-2 flex items-center justify-between text-xs text-slate-500 border-t border-theme-100">
+                        <strong class="text-theme-800 font-semibold">${msg.author}</strong>
+                        <span>${msg.relation}</span>
+                    </div>
+                `;
+                container.appendChild(item);
+            });
+        }
+
+        function toggleAdminModal() {
+            const modal = document.getElementById('adminModal');
+            modal.classList.toggle('hidden');
+        }
+
+        function setTheme(themeName) {
+            appState.theme = themeName;
+            document.body.className = document.body.className.replace(/theme-\w+/g, '');
+            if (themeName !== 'floral') {
+                document.body.classList.add(`theme-${themeName}`);
+            }
+        }
+
+        function updateSiteDetails() {
+            document.getElementById('navCoupleName').innerText = appState.coupleNames;
+            document.getElementById('heroCoupleName').innerText = appState.coupleNames;
+            document.getElementById('footerCoupleName').innerText = appState.coupleNames;
+            document.getElementById('venueNameDisplay').innerText = appState.venueName;
+            document.getElementById('pixKeyDisplay').innerText = appState.pixKey;
+            document.getElementById('pixNameDisplay').innerText = appState.pixName;
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('lightbox').classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
